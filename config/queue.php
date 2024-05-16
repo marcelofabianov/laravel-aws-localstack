@@ -72,6 +72,14 @@ return [
             'after_commit' => false,
         ],
 
+        'localstack' => [
+            'driver' => 'sqs',
+            'key' => env('LOCAL_AWS_ACCESS_KEY_ID'),
+            'secret' => env('LOCAL_AWS_SECRET_ACCESS_KEY'),
+            'prefix' => env('LOCAL_SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
+            'queue' => env('LOCAL_SQS_QUEUE', 'your-queue-name'),
+            'region' => env('LOCAL_AWS_DEFAULT_REGION', 'us-east-1'),
+        ],
     ],
 
     /*
