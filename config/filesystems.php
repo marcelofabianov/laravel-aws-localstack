@@ -58,12 +58,12 @@ return [
 
         'localstack' => [
             'driver' => 's3',
-            'key' => env('LOCAL_AWS_ACCESS_KEY_ID'),
-            'secret' => env('LOCAL_AWS_SECRET_ACCESS_KEY'),
-            'region' => env('LOCAL_AWS_DEFAULT_REGION', 'us-east-1'),
-            'bucket' => env('LOCAL_AWS_BUCKET'),
-            'url' => env('LOCAL_AWS_URL'),
-            'endpoint' => env('LOCAL_AWS_ENDPOINT', 'http://localhost:4566'),
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+            'bucket' => env('AWS_BUCKET'),
+            'url' => env('AWS_URL'),
+            'endpoint' => env('AWS_ENDPOINT', 'http://localhost:4566'),
             'use_path_style_endpoint' => true,
         ],
 

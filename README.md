@@ -4,14 +4,10 @@ Simualando AWS S3 com LocalStack e Laravel
 
 ## Commands
 
-Criando um bucket no LocalStack
-
 ```bash
-aws --endpoint-url=http://localhost:4566 s3 mb s3://<nome-do-bucket> --no-sign-request
+chmod +w _local/docker/localstack/init-bucket-queue.sh
 ```
 
-Criando Queue no SQS LocalStack
+## References
 
-```bash
-aws sqs create-queue --queue-name laravel_queue
-```
+https://medium.com/@anchan.ashwithabg95/using-localstack-sns-and-sqs-for-devbox-testing-fa09de5e3bbb

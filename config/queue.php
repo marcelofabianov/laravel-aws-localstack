@@ -52,16 +52,16 @@ return [
             'after_commit' => false,
         ],
 
-        'sqs' => [
-            'driver' => 'sqs',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
-            'queue' => env('SQS_QUEUE', 'default'),
-            'suffix' => env('SQS_SUFFIX'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'after_commit' => false,
-        ],
+//        'sqs' => [
+//            'driver' => 'sqs',
+//            'key' => env('AWS_ACCESS_KEY_ID'),
+//            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+//            'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
+//            'queue' => env('SQS_QUEUE', 'default'),
+//            'suffix' => env('SQS_SUFFIX'),
+//            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+//            'after_commit' => false,
+//        ],
 
         'redis' => [
             'driver' => 'redis',
@@ -74,11 +74,11 @@ return [
 
         'localstack' => [
             'driver' => 'sqs',
-            'key' => env('LOCAL_AWS_ACCESS_KEY_ID'),
-            'secret' => env('LOCAL_AWS_SECRET_ACCESS_KEY'),
-            'prefix' => env('LOCAL_SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
-            'queue' => env('LOCAL_SQS_QUEUE', 'your-queue-name'),
-            'region' => env('LOCAL_AWS_DEFAULT_REGION', 'us-east-1'),
+            'key' => env('AWS_ACCESS_KEY_ID', 'localstack'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY', 'localstack'),
+            'prefix' => env('SQS_PREFIX', 'http://localstack:4566'),
+            'queue' => env('SQS_QUEUE', 'laravel_queue'),
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
         ],
     ],
 
