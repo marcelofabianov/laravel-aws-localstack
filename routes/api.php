@@ -8,9 +8,9 @@ Route::post('/', static function (Request $request) {
 
     $path = $document->store('temp/documents');
 
-    ds($path)->label('Path');
-
-    \App\Jobs\UploadDocumentToS3Job::dispatch($path);
+    \App\Jobs\UploadDocumentToS3Job::dispatch($path)
+        ->onQueue('laravel_queue')
+        ->onConnection('localstack');
 
     return response()->json([
         'message' => 'Document uploaded to S3'
